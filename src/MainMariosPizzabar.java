@@ -3,7 +3,6 @@ import java.util.*;
 public class MainMariosPizzabar {
     public static void main(String[] args) {
         runMariosPizzaProgram();
-        System.out.println("HEJ");
     }
 
     public static void runMariosPizzaProgram() {
