@@ -6,13 +6,15 @@ public class MainMariosPizzabar {
     }
 
     public static void runMariosPizzaProgram() {
-        System.out.println("hej");
-        System.out.println("Tonje");
+
         Scanner input = new Scanner(System.in);
         while (true){
-            int menuChoich = input.nextInt();
-            switch (menuChoich){
+            System.out.println("Indtast nummer: ");
+            int menuChoice = input.nextInt();
+            switch (menuChoice){
                 case 1:
+                    System.out.println("Menu 1 Test");
+                    break;
                 case 5:
                     System.exit(0);
                 default:
