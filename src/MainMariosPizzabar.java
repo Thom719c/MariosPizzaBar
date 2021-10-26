@@ -4,6 +4,6 @@ public class MainMariosPizzabar {
     }
 
     public static void runMariosPizzaProgram() {
-
+        System.out.println("hej");
     }
 }
