@@ -14,6 +14,8 @@ public class MainMariosPizzabar {
             int menuChoich = input.nextInt();
             switch (menuChoich){
                 case 1:
+                    System.out.println("Menu 1 Test");
+                    break;
                 case 5:
                     System.exit(0);
                 default:
