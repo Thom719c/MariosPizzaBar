@@ -10,6 +10,7 @@ public class MainMariosPizzabar {
         System.out.println("Tonje");
         Scanner input = new Scanner(System.in);
         while (true){
+            System.out.println("Indtast nummer: ");
             int menuChoich = input.nextInt();
             switch (menuChoich){
                 case 1:
