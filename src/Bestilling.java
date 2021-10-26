@@ -19,6 +19,7 @@ public class Bestilling {
                 break;
             }
         }
+        System.out.println(Arrays.toString(bestillingsliste));
     }
 
 }
