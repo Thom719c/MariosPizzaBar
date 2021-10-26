@@ -11,7 +11,7 @@ public class MainMariosPizzabar {
         Filhaandtering filhaandtering = new Filhaandtering();
         Scanner input = new Scanner(System.in);
         while (true){
-            System.out.println("Menu - 1-5 \n" + "1. Vis menu \n5. For exit" + "\nIndtast nummer: ");
+            System.out.println("Menu - 1-5 \n" + "1. Menukort \n5. For exit" + "\nIndtast nummer: ");
             int menuChoice = input.nextInt();
             switch (menuChoice){
                 case 1:
