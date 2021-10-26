@@ -10,8 +10,8 @@ public class MainMariosPizzabar {
         Scanner input = new Scanner(System.in);
         while (true){
             System.out.println("Indtast nummer: ");
-            int menuChoich = input.nextInt();
-            switch (menuChoich){
+            int menuChoice = input.nextInt();
+            switch (menuChoice){
                 case 1:
                     System.out.println("Menu 1 Test");
                     break;
