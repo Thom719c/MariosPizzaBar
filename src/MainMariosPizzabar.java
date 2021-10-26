@@ -6,7 +6,6 @@ public class MainMariosPizzabar {
     }
 
     public static void runMariosPizzaProgram() {
-
         Scanner input = new Scanner(System.in);
         while (true){
             System.out.println("Indtast nummer: ");
