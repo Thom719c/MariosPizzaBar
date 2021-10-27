@@ -9,9 +9,9 @@ public class Filhaandtering {
             tempI++;
         }
     }
-    public void readB()throws FileNotFoundException{
+    public void readB(String[] bestillingsliste)throws FileNotFoundException{
         Scanner readBScanner = new Scanner(new File("Ressources/Bestillingsliste"));
-        int tempI = 1;
+        int tempI = 0;
         while(readBScanner.hasNext()) {
             System.out.printf("%3d. %s\n", tempI,readBScanner.nextLine());
             tempI++;
