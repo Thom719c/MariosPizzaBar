@@ -12,7 +12,7 @@ public class MainMariosPizzabar {
         Bestilling bestilling = new Bestilling();
         Scanner input = new Scanner(System.in);
         while (true){
-            System.out.println("Menu - 1-5 \n" + "1. Menukort \n2. Bestilling \n5. For exit" + "\nIndtast nummer: ");
+            System.out.println("Menu - 1-5 \n" + "1. Menukort \n2. Vis bestillings menu \n3. Vis bestillinger \n4. For exit" + "\nIndtast nummer: ");
             int menuChoice = input.nextInt();
             switch (menuChoice){
                 case 1:
@@ -22,7 +22,9 @@ public class MainMariosPizzabar {
                 case 2:
                     bestilling.bestilling();
                     break;
-                case 5:
+                case 3:
+                    break;
+                case 4:
                     System.exit(0);
                 default:
                     System.out.println();
