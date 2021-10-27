@@ -2,7 +2,10 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Bestilling {
+
+
     private String[] bestillingsliste = new String[10];
+
     public void bestilling() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         Filhaandtering filhaandtering = new Filhaandtering();
