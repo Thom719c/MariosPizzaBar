@@ -11,7 +11,7 @@ public class Bestilling {
         Scanner input = new Scanner(System.in);
         int bestillingChoice = 0;
         while (bestillingChoice != 3){
-            System.out.println("Bestilling menu \n" + "\n1. Tilføj bestilling \n2. Fjern bestilling\n3. For exit" + "\nIndtast nummer: ");
+            System.out.println("Bestilling menu \n" + "\n1. Tilføj bestilling \n2. Fjern bestilling \n4. For exit" + "\nIndtast nummer: ");
             bestillingChoice = input.nextInt();
             input.nextLine();
             switch (bestillingChoice){
@@ -20,6 +20,8 @@ public class Bestilling {
                     break;
                 case 2:
                     fjernBestilling(input);
+                    break;
+                case 3:
                     break;
                 default:
                     System.out.println();
