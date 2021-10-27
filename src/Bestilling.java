@@ -22,5 +22,8 @@ public class Bestilling {
         }
         System.out.println(Arrays.toString(bestillingsliste));
     }
+    public void fjernBestilling(){
+        
+    }
 
 }
