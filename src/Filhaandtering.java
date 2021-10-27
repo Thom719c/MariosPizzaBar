@@ -15,9 +15,7 @@ public class Filhaandtering {
         String bestilling = "";
 
         for(int i = 0; i < bestillingsliste.length; ++i) {
-            if (bestillingsliste[i] != null) {
-                bestilling = bestilling + bestillingsliste[i] + "\n";
-            }
+            bestilling = bestilling + bestillingsliste[i] + "\n";
         }
         out.println(bestilling);
     }
