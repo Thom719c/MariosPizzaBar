@@ -9,16 +9,6 @@ public class Filhaandtering {
             tempI++;
         }
     }
-    public void readB(String[] bestillingNr)throws FileNotFoundException{
-        Scanner readBScanner = new Scanner(new File("Ressources/Bestillingsliste"));
-        int tempI = 0;
-        while(readBScanner.hasNext()) {
-            //System.out.printf("%3d. %s\n", tempI,readBScanner.nextLine());
-            bestillingNr[tempI] = readBScanner.nextLine();
-            System.out.println((tempI+1) + ". " + bestillingNr[tempI]);
-            tempI++;
-        }
-    }
 
     public void writeB(String[] bestillingsliste) throws FileNotFoundException {
         PrintStream out = new PrintStream(new File("Ressources/Bestillingsliste"));
@@ -29,7 +19,6 @@ public class Filhaandtering {
                 bestilling = bestilling + bestillingsliste[i] + "\n";
             }
         }
-
         out.println(bestilling);
     }
 
