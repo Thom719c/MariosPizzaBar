@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Bestilling {
     private String[] bestillingsliste = new String[3];
+
     public void bestilling(){
         Scanner input = new Scanner(System.in);
         tilfojBestilling(input);
