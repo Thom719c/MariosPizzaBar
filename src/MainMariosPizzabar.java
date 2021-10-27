@@ -23,7 +23,9 @@ public class MainMariosPizzabar {
                     bestilling.bestilling();
                     break;
                 case 3:
-                    filhaandtering.readB();
+                    //filhaandtering.readB();
+                    bestilling.bestilling();
+                    //Bestilling.fjernBestilling(input, filhaandtering);
                     break;
                 case 5:
                     System.exit(0);
