@@ -43,17 +43,20 @@ public class Bestilling {
     }
 
     public void fjernBestilling(Scanner input) throws FileNotFoundException {
-        System.out.println("Bestillingslisten:");
-        for (int i = 0; i < bestillingsliste.length; i++){
-            System.out.println((i+1) + ". " + bestillingsliste[i]);
-        }
+        fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = null;
         }
-
-        System.out.println(Arrays.toString(bestillingsliste));
+        fjernBestillingPrint();
+        filhaandtering.writeB(bestillingsliste);
+    }
+    public void fjernBestillingPrint(){
+        System.out.println("Bestillingslisten:");
+        for (int i = 0; i < bestillingsliste.length; i++){
+            System.out.println((i+1) + ". " + bestillingsliste[i]);
+        }
     }
 
 }
