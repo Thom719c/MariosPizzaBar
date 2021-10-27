@@ -22,6 +22,9 @@ public class MainMariosPizzabar {
                 case 2:
                     bestilling.bestilling();
                     break;
+                case 3:
+                    filhaandtering.readB();
+                    break;
                 case 5:
                     System.exit(0);
                 default:
