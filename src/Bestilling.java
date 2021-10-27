@@ -21,8 +21,8 @@ public class Bestilling {
         }
         System.out.println(Arrays.toString(bestillingsliste));
     }
-    public void fjernBestilling(){
-        
+    public void fjernBestilling(Scanner input){
+        System.out.println("H");
     }
 
 }
