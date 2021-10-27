@@ -9,37 +9,23 @@ public class Filhaandtering {
             tempI++;
         }
     }
-    public void readB(String[] bestillingsliste)throws FileNotFoundException{
-        Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
-        PrintStream output = new PrintStream(new File("Ressources/Bestillingsliste"));
 
-        String[] saveList = new String[10];
+    public void writeB(String[] bestillingsliste) throws FileNotFoundException {
+        PrintStream out = new PrintStream(new File("Ressources/Bestillingsliste"));
+        String bestilling = "";
 
-        boolean test = true;
-        int count = 0;
-        while(test) {
-            if(input.hasNextLine()){
-                saveList[count] = input.nextLine();
-                count++;
-            }
-            if(!input.hasNextLine()){
-                test = false;
-            }
+        for(int i = 0; i < bestillingsliste.length; ++i) {
+            bestilling += bestillingsliste[i] + "\n";
         }
-        String outBestillingsliste = "";
-        for(int i = 0; i <= saveList.length - 1; i++){
-            outBestillingsliste += saveList[i];
+        out.println(bestilling);
+    }
+
+    public void opdaterArray(String[] bestillingsliste) throws FileNotFoundException {
+        int i = 0;
+        Scanner readBestillingsliste = new Scanner(new File("Ressources/Bestillingsliste"));
+        while (readBestillingsliste.hasNext()){
+            bestillingsliste[i] = readBestillingsliste.nextLine();
+            i++;
         }
-        output.println(outBestillingsliste);
-
-        System.out.println(outBestillingsliste);
-
-
-        /*
-        int tempI = 0;
-        while(readBScanner.hasNext()) {
-            System.out.printf("%3d. %s\n", tempI,readBScanner.nextLine());
-            tempI++;
-        }*/
     }
 }
