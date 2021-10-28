@@ -10,7 +10,7 @@ public class Bestilling {
         filhaandtering.opdaterArray(bestillingsliste);
         Scanner input = new Scanner(System.in);
         int bestillingChoice = 0;
-        while (bestillingChoice != 3){
+        while (bestillingChoice != 4){
             System.out.println("Bestilling menu \n" + "\n1. Tilføj bestilling \n2. Fjern bestilling \n4. For exit" + "\nIndtast nummer: ");
             bestillingChoice = input.nextInt();
             input.nextLine();
@@ -49,7 +49,7 @@ public class Bestilling {
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
         if(number >= 1 && number <= bestillingsliste.length){
-            bestillingsliste[number-1] = null;
+            bestillingsliste[number-1] = "null";
         }
         fjernBestillingPrint();
         filhaandtering.writeB(bestillingsliste);
