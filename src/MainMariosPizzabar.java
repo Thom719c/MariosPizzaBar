@@ -23,7 +23,7 @@ public class MainMariosPizzabar {
                     bestilling.bestilling();
                     break;
                 case 3:
-                    filhaandtering.pizzaPris();
+
                     break;
                 case 4:
                     System.exit(0);
@@ -32,4 +32,5 @@ public class MainMariosPizzabar {
             }
         }
     }
+
 }
