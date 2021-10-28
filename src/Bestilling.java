@@ -1,6 +1,6 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Bestilling {
     private String[] bestillingsliste = new String[10];
@@ -22,6 +22,7 @@ public class Bestilling {
                     fjernBestilling(input);
                     break;
                 case 3:
+                    sorterAfhentingstidpunkt();
                     break;
                 default:
                     System.out.println();
@@ -36,11 +37,12 @@ public class Bestilling {
                 String pizzaNr = input.nextLine();
                 System.out.println("Indtast afhentningstidspunkt: ");
                 String afhentningstidspunkt = input.next();
-                bestillingsliste[i] = pizzaNr + "\t" + afhentningstidspunkt;
+                bestillingsliste[i] = pizzaNr + ". " + afhentningstidspunkt;
                 System.out.println(bestillingsliste[i]);
                 break;
             }
         }
+        sorterAfhentingstidpunkt();
         filhaandtering.writeB(bestillingsliste);
     }
 
@@ -51,14 +53,40 @@ public class Bestilling {
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
+        sorterAfhentingstidpunkt();
         fjernBestillingPrint();
         filhaandtering.writeB(bestillingsliste);
     }
     public void fjernBestillingPrint(){
         System.out.println("Bestillingslisten:");
         for (int i = 0; i < bestillingsliste.length; i++){
-            System.out.println((i+1) + ". " + bestillingsliste[i]);
+            System.out.println("Nr " + (i+1) + ". " + bestillingsliste[i]);
         }
     }
-
+    public void sorterAfhentingstidpunkt() throws FileNotFoundException {
+        String[] resultA = new String[10];
+        String tempA;
+        String tempBestilling;
+        for (int i = 0; i < bestillingsliste.length; i++) {
+            String result = bestillingsliste[i];
+            //resultA = result.split[(result.split("-")).length -1];
+            String[] split = result.split( Pattern.quote( "." ) );
+            String lastOne = split[split.length-1];
+            resultA[i] = lastOne;
+        }
+        for (int i = 0; i <bestillingsliste.length; i++) {
+            for (int j = i+1; j <bestillingsliste.length; j++) {
+                if( resultA[i].compareTo(resultA[j]) > 0) {
+                    tempA = resultA[i];
+                    tempBestilling = bestillingsliste[i];
+                    resultA[i] = resultA[j];
+                    bestillingsliste[i] = bestillingsliste[j];
+                    resultA[j] = tempA;
+                    bestillingsliste[j] = tempBestilling;
+                }
+            }
+            System.out.println(bestillingsliste[i]);
+            filhaandtering.writeB(bestillingsliste);
+        }
+    }
 }
