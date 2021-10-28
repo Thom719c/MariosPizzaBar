@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Omsaetning {
+/*public class Omsaetning {
 
 
     public static void filPizzaCounter(int line)throws FileNotFoundException {

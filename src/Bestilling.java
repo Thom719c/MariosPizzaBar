@@ -51,7 +51,7 @@ public class Bestilling {
         fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
-        Omsaetning.filPizzaCounter(number); //omsætning metode kald
+       // Omsaetning.filPizzaCounter(number); //omsætning metode kald
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
