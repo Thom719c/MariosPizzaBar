@@ -11,7 +11,8 @@ public class Bestilling {
         Scanner input = new Scanner(System.in);
         int bestillingChoice = 0;
         while (bestillingChoice != 4){
-            System.out.println("Bestilling menu \n" + "\n1. Tilføj bestilling \n2. Fjern bestilling \n4. For exit" + "\nIndtast nummer: ");
+            System.out.println("Bestilling menu \n" +
+                    "\n1. Tilføj bestilling \n2. Fjern bestilling \n3. Vis bestillingsliste \n4. For exit" + "\nIndtast nummer: ");
             bestillingChoice = input.nextInt();
             input.nextLine();
             switch (bestillingChoice){
@@ -31,12 +32,12 @@ public class Bestilling {
     }
     public void tilfojBestilling(Scanner input) throws FileNotFoundException {
         for (int i = 0; i < bestillingsliste.length; i++){
-            if (bestillingsliste[i].equals("null")) {
+            if (bestillingsliste[i].equals("null")) { //Se på null, evt. lav nyt navn for null
                 System.out.println("Indtast pizzanummer (f.eks: 1, 5, 3): ");
                 String pizzaNr = input.nextLine();
                 System.out.println("Indtast afhentningstidspunkt: ");
                 String afhentningstidspunkt = input.next();
-                bestillingsliste[i] = pizzaNr + "\t" + afhentningstidspunkt;
+                bestillingsliste[i] = pizzaNr + " .\t" + afhentningstidspunkt;
                 System.out.println(bestillingsliste[i]);
                 break;
             }
@@ -48,8 +49,9 @@ public class Bestilling {
         fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
+        Omsaetning.filPizzaCounter(number); //omsætning metode kald
         if(number >= 1 && number <= bestillingsliste.length){
-            bestillingsliste[number-1] = null;
+            bestillingsliste[number-1] = "null";
         }
         fjernBestillingPrint();
         filhaandtering.writeB(bestillingsliste);
