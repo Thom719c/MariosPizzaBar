@@ -1,6 +1,6 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Bestilling {
     private String[] bestillingsliste = new String[10];
@@ -23,6 +23,7 @@ public class Bestilling {
                     fjernBestilling(input);
                     break;
                 case 3:
+
                     break;
                 default:
                     System.out.println();
@@ -32,16 +33,17 @@ public class Bestilling {
     }
     public void tilfojBestilling(Scanner input) throws FileNotFoundException {
         for (int i = 0; i < bestillingsliste.length; i++){
-            if (bestillingsliste[i].equals("null")) { //Se på null, evt. lav nyt navn for null
+            if (bestillingsliste[i].equals("null")) {
                 System.out.println("Indtast pizzanummer (f.eks: 1, 5, 3): ");
                 String pizzaNr = input.nextLine();
                 System.out.println("Indtast afhentningstidspunkt: ");
                 String afhentningstidspunkt = input.next();
-                bestillingsliste[i] = pizzaNr + " .\t" + afhentningstidspunkt;
-                System.out.println(bestillingsliste[i]);
+                bestillingsliste[i] = pizzaNr + ". " + afhentningstidspunkt;
+                System.out.println("Bestilling tilføjet: " + bestillingsliste[i] + "\n");
                 break;
             }
         }
+        sorterAfhentingstidpunkt();
         filhaandtering.writeB(bestillingsliste);
     }
 
@@ -53,14 +55,39 @@ public class Bestilling {
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
+        sorterAfhentingstidpunkt();
         fjernBestillingPrint();
         filhaandtering.writeB(bestillingsliste);
     }
     public void fjernBestillingPrint(){
         System.out.println("Bestillingslisten:");
         for (int i = 0; i < bestillingsliste.length; i++){
-            System.out.println((i+1) + ". " + bestillingsliste[i]);
+            System.out.printf("Nr %2d: %s\n", (i+1), bestillingsliste[i]);
         }
     }
+    public void visBestillinger(){
+        System.out.printf("Pizzanummer: %d, afhentningstidspunkt: &s");
+    }
 
+    public void sorterAfhentingstidpunkt() throws FileNotFoundException {
+        String[] afhentningstidspunkt = new String[10];
+        String tempBestilling;
+        for (int i = 0; i < bestillingsliste.length; i++) {
+            String result = bestillingsliste[i];
+            String[] split = result.split( Pattern.quote( "." ) );
+            String lastOne = split[split.length-1];
+            afhentningstidspunkt[i] = lastOne;
+        }
+        for (int i = 0; i <bestillingsliste.length; i++) {
+            for (int j = i+1; j <bestillingsliste.length; j++) {
+                if( afhentningstidspunkt[i].compareTo(afhentningstidspunkt[j]) > 0) {
+                    tempBestilling = bestillingsliste[i];
+                    bestillingsliste[i] = bestillingsliste[j];
+                    bestillingsliste[j] = tempBestilling;
+                }
+            }
+            //System.out.println(bestillingsliste[i]);
+            filhaandtering.writeB(bestillingsliste);
+        }
+    }
 }
