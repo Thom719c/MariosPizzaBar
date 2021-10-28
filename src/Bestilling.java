@@ -26,6 +26,8 @@ public class Bestilling {
                 case 3:
                     sorterAfhentingstidpunkt();
                     break;
+                case 5:
+                    fjernBestillingPrint();
                 default:
                     System.out.println();
             }
@@ -52,8 +54,9 @@ public class Bestilling {
         fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
-        //Omsaetning.filPizzaCounter(number); //omsætning metode kald
+
         if(number >= 1 && number <= bestillingsliste.length){
+            Omsaetning.filPizzaCounter(number); //omsætning metode kald
             bestillingsliste[number-1] = "null";
         }
         sorterAfhentingstidpunkt();
