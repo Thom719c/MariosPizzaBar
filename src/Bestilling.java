@@ -8,6 +8,7 @@ public class Bestilling {
 
     public void bestilling() throws FileNotFoundException {
         filhaandtering.opdaterArray(bestillingsliste);
+        sorterAfhentingstidpunkt();
         Scanner input = new Scanner(System.in);
         int bestillingChoice = 0;
         while (bestillingChoice != 4){
@@ -23,14 +24,16 @@ public class Bestilling {
                     fjernBestilling(input);
                     break;
                 case 3:
-                    sorterAfhentingstidpunkt();
+                    printBestillinger();
                     break;
                 default:
                     System.out.println();
             }
         }
+
     }
     public void tilfojBestilling(Scanner input) throws FileNotFoundException {
+        printBestillinger();
         for (int i = 0; i < bestillingsliste.length; i++){
             if (bestillingsliste[i].equals("null")) {
                 System.out.println("Indtast pizzanummer (f.eks: 1, 5, 3): ");
@@ -47,22 +50,24 @@ public class Bestilling {
     }
 
     public void fjernBestilling(Scanner input) throws FileNotFoundException {
-        fjernBestillingPrint();
+        printBestillinger();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
-        Omsaetning.filPizzaCounter(number); //omsætning metode kald
+        //Omsaetning.filPizzaCounter(number); //omsætning metode kald
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
-        fjernBestillingPrint();
+        sorterAfhentingstidpunkt();
+        printBestillinger();
         filhaandtering.writeB(bestillingsliste);
     }
-    public void fjernBestillingPrint() throws FileNotFoundException {
+    public void printBestillinger() throws FileNotFoundException {
         sorterAfhentingstidpunkt();
         System.out.println("Bestillingslisten:");
         for (int i = 0; i < bestillingsliste.length; i++){
             System.out.printf("Nr %2d: %s\n", (i+1), bestillingsliste[i]);
         }
+        System.out.println();
     }
     public void visBestillinger(){
         System.out.printf("Pizzanummer: %d, afhentningstidspunkt: &s");
