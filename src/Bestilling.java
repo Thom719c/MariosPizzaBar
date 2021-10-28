@@ -49,6 +49,7 @@ public class Bestilling {
     }
 
     public void fjernBestilling(Scanner input) throws FileNotFoundException {
+        sorterAfhentingstidpunkt();
         fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
