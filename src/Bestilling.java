@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class Bestilling {
-    String[] bestillingsliste = new String[10];
+    private String[] bestillingsliste = new String[10];
     private Filhaandtering filhaandtering = new Filhaandtering();
 
     public void bestilling() throws FileNotFoundException {
@@ -11,7 +11,8 @@ public class Bestilling {
         Scanner input = new Scanner(System.in);
         int bestillingChoice = 0;
         while (bestillingChoice != 4){
-            System.out.println("Bestilling menu \n" + "\n1. Tilføj bestilling \n2. Fjern bestilling \n4. For exit" + "\nIndtast nummer: ");
+            System.out.println("Bestilling menu \n" +
+                    "\n1. Tilføj bestilling \n2. Fjern bestilling \n3. Vis bestillingsliste \n4. For exit" + "\nIndtast nummer: ");
             bestillingChoice = input.nextInt();
             input.nextLine();
             switch (bestillingChoice){
@@ -50,6 +51,7 @@ public class Bestilling {
         fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
+        Omsaetning.filPizzaCounter(number); //omsætning metode kald
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
