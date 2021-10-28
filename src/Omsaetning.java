@@ -24,7 +24,7 @@ public class Omsaetning {
                 count1++;
             }
         }
-        System.out.println("Her er den: " + count1);
+        System.out.println("Bestillingen har:  " + count1);
     }
 }
     /*public static int pizzaCounter(String nr){

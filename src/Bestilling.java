@@ -29,7 +29,6 @@ public class Bestilling {
                     System.out.println();
             }
         }
-
     }
     public void tilfojBestilling(Scanner input) throws FileNotFoundException {
         for (int i = 0; i < bestillingsliste.length; i++){
