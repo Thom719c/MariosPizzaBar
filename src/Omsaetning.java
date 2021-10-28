@@ -11,7 +11,7 @@ public class Omsaetning {
 
         Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
 
-        for(int i = 0; i == line; i++){
+        for(int i = 0; i < line; i++){
             input.nextLine();
         }
         String text = input.nextLine();
