@@ -40,25 +40,5 @@ public class Omsaetning {
         System.out.println("HER: " + count1);
     }
 
-    /*public static void filPizzaCounter(int line)throws FileNotFoundException {
-
-        int count1 = 0;
-        int count2 = 0;
-        int count3 = 0;
-        int count4 = 0;
-        int count5 = 0;
-        int count6 = 0;
-        int count7 = 0;
-        int count8 = 0;
-        int count9 = 0;
-        int count10 = 0;
-        int count11 = 0;
-        int count12 = 0;
-        int count13 = 0;
-        int count14 = 0;
-
-        Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
-
-
 
 }
