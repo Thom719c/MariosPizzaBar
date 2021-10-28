@@ -8,7 +8,6 @@ public class Bestilling {
 
     public void bestilling() throws FileNotFoundException {
         filhaandtering.opdaterArray(bestillingsliste);
-        sorterAfhentingstidpunkt();
         Scanner input = new Scanner(System.in);
         int bestillingChoice = 0;
         while (bestillingChoice != 4){
@@ -30,7 +29,6 @@ public class Bestilling {
                     System.out.println();
             }
         }
-
     }
     public void tilfojBestilling(Scanner input) throws FileNotFoundException {
         for (int i = 0; i < bestillingsliste.length; i++){
@@ -53,15 +51,15 @@ public class Bestilling {
         fjernBestillingPrint();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
-        //Omsaetning.filPizzaCounter(number); //omsætning metode kald
+        Omsaetning.filPizzaCounter(number); //omsætning metode kald
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
-        sorterAfhentingstidpunkt();
         fjernBestillingPrint();
         filhaandtering.writeB(bestillingsliste);
     }
-    public void fjernBestillingPrint(){
+    public void fjernBestillingPrint() throws FileNotFoundException {
+        sorterAfhentingstidpunkt();
         System.out.println("Bestillingslisten:");
         for (int i = 0; i < bestillingsliste.length; i++){
             System.out.printf("Nr %2d: %s\n", (i+1), bestillingsliste[i]);
