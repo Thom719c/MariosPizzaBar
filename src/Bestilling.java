@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class Bestilling {
-    private String[] bestillingsliste = new String[10];
+    String[] bestillingsliste = new String[10];
     private Filhaandtering filhaandtering = new Filhaandtering();
 
     public void bestilling() throws FileNotFoundException {
@@ -22,7 +22,7 @@ public class Bestilling {
                     fjernBestilling(input);
                     break;
                 case 3:
-                    sorterAfhentingstidpunkt();
+
                     break;
                 default:
                     System.out.println();
@@ -38,7 +38,7 @@ public class Bestilling {
                 System.out.println("Indtast afhentningstidspunkt: ");
                 String afhentningstidspunkt = input.next();
                 bestillingsliste[i] = pizzaNr + ". " + afhentningstidspunkt;
-                System.out.println(bestillingsliste[i]);
+                System.out.println("Bestilling tilføjet: " + bestillingsliste[i] + "\n");
                 break;
             }
         }
@@ -60,32 +60,31 @@ public class Bestilling {
     public void fjernBestillingPrint(){
         System.out.println("Bestillingslisten:");
         for (int i = 0; i < bestillingsliste.length; i++){
-            System.out.println("Nr " + (i+1) + ". " + bestillingsliste[i]);
+            System.out.printf("Nr %2d: %s\n", (i+1), bestillingsliste[i]);
         }
     }
+    public void visBestillinger(){
+        System.out.printf("Pizzanummer: %d, afhentningstidspunkt: &s");
+    }
+
     public void sorterAfhentingstidpunkt() throws FileNotFoundException {
-        String[] resultA = new String[10];
-        String tempA;
+        String[] afhentningstidspunkt = new String[10];
         String tempBestilling;
         for (int i = 0; i < bestillingsliste.length; i++) {
             String result = bestillingsliste[i];
-            //resultA = result.split[(result.split("-")).length -1];
             String[] split = result.split( Pattern.quote( "." ) );
             String lastOne = split[split.length-1];
-            resultA[i] = lastOne;
+            afhentningstidspunkt[i] = lastOne;
         }
         for (int i = 0; i <bestillingsliste.length; i++) {
             for (int j = i+1; j <bestillingsliste.length; j++) {
-                if( resultA[i].compareTo(resultA[j]) > 0) {
-                    tempA = resultA[i];
+                if( afhentningstidspunkt[i].compareTo(afhentningstidspunkt[j]) > 0) {
                     tempBestilling = bestillingsliste[i];
-                    resultA[i] = resultA[j];
                     bestillingsliste[i] = bestillingsliste[j];
-                    resultA[j] = tempA;
                     bestillingsliste[j] = tempBestilling;
                 }
             }
-            System.out.println(bestillingsliste[i]);
+            //System.out.println(bestillingsliste[i]);
             filhaandtering.writeB(bestillingsliste);
         }
     }
