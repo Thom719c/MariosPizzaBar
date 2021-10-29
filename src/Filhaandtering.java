@@ -37,7 +37,7 @@ public class Filhaandtering {
         PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
         String pizzaOmsaetning = "";
 
-        for(int i = 0; i < omsaetning.length; ++i) {
+        for(int i = 0; i < 14; ++i) {
             pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + omsaetning[i] + "\n";
         }
         out.println(pizzaOmsaetning);
@@ -49,8 +49,8 @@ public class Filhaandtering {
         while (readOmsaetning.hasNext()){
             String tempS = readOmsaetning.next();
             int tempInt = readOmsaetning.nextInt();
-            String tempS1 = readOmsaetning.next();
-            String tempS2 = readOmsaetning.next();
+            tempS = readOmsaetning.next();
+            tempS = readOmsaetning.next();
             countOmsaetning[i] = readOmsaetning.nextInt();
             i++;
         }
