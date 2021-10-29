@@ -42,7 +42,7 @@ public class Bestilling {
                 System.out.println("Indtast afhentningstidspunkt: ");
                 String afhentningstidspunkt = input.next();
                 bestillingsliste[i] = pizzaNr + ". " + afhentningstidspunkt;
-                System.out.println("Bestilling tilføjet: " + bestillingsliste[i] + "\n");
+                //  System.out.println("Bestilling tilføjet: " + bestillingsliste[i] + "\n");
 
                 String result = bestillingsliste[i];
                 String[] split = result.split( Pattern.quote( "." ) );

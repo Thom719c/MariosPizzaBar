@@ -81,7 +81,7 @@ public class Salgsstatistik_Omsaetning {
         int tempPris = 0;
         for (int i = 0; i < 14; i++) {
             if (prisCount[i] >= 1){
-                //System.out.printf("Pizzanummer: %d antal bestillinger %d \n", (i+1), prisCount[i]);
+                System.out.printf("Pizzanummer: %d antal bestillinger %d \n", (i+1), prisCount[i]);
                 tempPris += prisCount[i] * filhaandtering.priser[i];
             }
         }
