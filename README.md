@@ -1,8 +1,8 @@
 # Marios-Pizzaria
 
-Lavet af
-Xenius - ElKaptajn
-Josefine - JosefineNelbom
-Philip - PhilipNS98
-Tonje - tonjemus
-Thomas - Thom719c
+*Lavet af*
+1. Xenius - ElKaptajn
+2. Josefine - JosefineNelbom
+3. Philip - PhilipNS98
+4. Tonje - tonjemus
+5. Thomas - Thom719c
