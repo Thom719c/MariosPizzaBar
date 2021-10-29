@@ -33,7 +33,7 @@ public class Salgsstatistik_Omsaetning {
 
     public void filPizzaCounter(int line)throws FileNotFoundException {
 
-        filhaandtering.opdaterOmsaetning(count);
+        filhaandtering.opdaterCountsalgsstatistik(count);
 
         Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
 
