@@ -26,7 +26,7 @@ public class Salgsstatistik_Omsaetning {
                     break;
                 case 3:
                     rydSalgsstatistikOmsaetning();
-                    printTilPizzaOmsaetning();
+                    filhaandtering.printTilPizzaOmsaetning(omsaetningTotalPris);
                     break;
                 default:
                     System.out.println();
@@ -108,17 +108,12 @@ public class Salgsstatistik_Omsaetning {
                 omsaetningTotalPris += count[i] * filhaandtering.priser[i];
             }
         }
-        printTilPizzaOmsaetning();
+        filhaandtering.printTilPizzaOmsaetning(omsaetningTotalPris);
     }
 
     public void rydSalgsstatistikOmsaetning() throws FileNotFoundException {
         Arrays.fill(count, 0);
         filhaandtering.writeToSalgsstatistik(count);
         omsaetningTotalPris = 0;
-    }
-
-    public void printTilPizzaOmsaetning() throws FileNotFoundException {
-        PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
-        out.println("Totalpris: " + omsaetningTotalPris);
     }
 }

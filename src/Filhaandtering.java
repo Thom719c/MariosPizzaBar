@@ -91,4 +91,8 @@ public class Filhaandtering {
             priser[i] = Integer.parseInt(firstOne);                        //Sætter værdigen ind på arrayet priser på index 'i'
         }
     }
+    public void printTilPizzaOmsaetning(int omsaetningTotalPris) throws FileNotFoundException {
+        PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        out.println("Totalpris: " + omsaetningTotalPris);
+    }
 }
