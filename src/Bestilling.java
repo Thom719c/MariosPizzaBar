@@ -64,7 +64,6 @@ public class Bestilling {
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
-        sorterAfhentingstidpunkt();
         printBestillinger();
         filhaandtering.writeB(bestillingsliste);
     }

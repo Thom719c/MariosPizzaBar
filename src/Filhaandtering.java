@@ -14,7 +14,7 @@ public class Filhaandtering {
         }
     }
 
-    public void readOmsaetning() throws FileNotFoundException{
+    public void readSalgsstatistik() throws FileNotFoundException{
         Scanner readFileScanner = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
         int tempI = 1;
         while(readFileScanner.hasNext()) {
@@ -33,7 +33,7 @@ public class Filhaandtering {
         out.println(bestilling);
     }
 
-    public void writeToOmsaetning(int[] omsaetning) throws FileNotFoundException {
+    public void writeToSalgsstatistik(int[] omsaetning) throws FileNotFoundException {
         PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
         String pizzaOmsaetning = "";
 
