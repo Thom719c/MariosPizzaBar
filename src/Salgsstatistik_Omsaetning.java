@@ -22,10 +22,10 @@ public class Salgsstatistik_Omsaetning {
                     filhaandtering.readSalgsstatistik();
                     break;
                 case 2:
-                    VisOmsaetning();
+                    visOmsaetning();
                     break;
                 case 3:
-                    RydSalgsstatistikOmsaetning();
+                    rydSalgsstatistikOmsaetning();
                     printTilPizzaOmsaetning();
                     break;
                 default:
@@ -81,7 +81,7 @@ public class Salgsstatistik_Omsaetning {
         int tempPris = 0;
         for (int i = 0; i < 14; i++) {
             if (prisCount[i] >= 1){
-                System.out.printf("Pizzanummer: %d antal bestillinger %d \n", (i+1), prisCount[i]);
+                //System.out.printf("Pizzanummer: %d antal bestillinger %d \n", (i+1), prisCount[i]);
                 tempPris += prisCount[i] * filhaandtering.priser[i];
             }
         }
@@ -95,7 +95,7 @@ public class Salgsstatistik_Omsaetning {
         }
     }
 
-    public void VisOmsaetning() throws FileNotFoundException {
+    public void visOmsaetning() throws FileNotFoundException {
         beregnOmsaetning();
         System.out.printf("Omsætnings total: %d kr.\n\n", omsaetningTotalPris);
     }
@@ -111,7 +111,7 @@ public class Salgsstatistik_Omsaetning {
         printTilPizzaOmsaetning();
     }
 
-    public void RydSalgsstatistikOmsaetning() throws FileNotFoundException {
+    public void rydSalgsstatistikOmsaetning() throws FileNotFoundException {
         Arrays.fill(count, 0);
         filhaandtering.writeToSalgsstatistik(count);
         omsaetningTotalPris = 0;
