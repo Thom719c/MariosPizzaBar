@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class Omsaetning {
+public class Salgsstatistik_Omsaetning {
     private Filhaandtering filhaandtering = new Filhaandtering();
     private int[] count = new int[14];
     private int[] prisCount = new int[14];

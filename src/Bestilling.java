@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class Bestilling {
     String[] bestillingsliste = new String[10];
     private Filhaandtering filhaandtering = new Filhaandtering();
-    private Omsaetning omsaetning = new Omsaetning();
+    private Salgsstatistik_Omsaetning omsaetning = new Salgsstatistik_Omsaetning();
 
     public void bestilling() throws FileNotFoundException {
         filhaandtering.opdaterArray(bestillingsliste);
