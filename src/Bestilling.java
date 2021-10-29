@@ -53,7 +53,6 @@ public class Bestilling {
             }
         }
         sorterAfhentingstidpunkt();
-        filhaandtering.writeToBestillingsliste(bestillingsliste);
     }
 
     public void fjernBestilling(Scanner input) throws FileNotFoundException {
