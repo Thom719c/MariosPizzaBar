@@ -49,8 +49,8 @@ public class Filhaandtering {
         while (readOmsaetning.hasNext()){
             String tempS = readOmsaetning.next();
             int tempInt = readOmsaetning.nextInt();
-            String tempS1 = readOmsaetning.next();
-            String tempS2 = readOmsaetning.next();
+            tempS = readOmsaetning.next();
+            tempS = readOmsaetning.next();
             countOmsaetning[i] = readOmsaetning.nextInt();
             i++;
         }
