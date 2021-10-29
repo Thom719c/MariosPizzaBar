@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class Bestilling {
     String[] bestillingsliste = new String[10];
     private Filhaandtering filhaandtering = new Filhaandtering();
-    private Salgsstatistik_Omsaetning omsaetning = new Salgsstatistik_Omsaetning();
+    private Salgsstatistik_Omsaetning salgsstatistikOmsaetning = new Salgsstatistik_Omsaetning();
 
     public void bestilling() throws FileNotFoundException {
         filhaandtering.opdaterArray(bestillingsliste);
@@ -48,7 +48,7 @@ public class Bestilling {
                 String[] split = result.split( Pattern.quote( "." ) );
                 String tid = split[split.length-1];
 
-                omsaetning.pizzaPris(bestillingsliste[i], tid);
+                salgsstatistikOmsaetning.pizzaPris(bestillingsliste[i], tid);
                 break;
             }
         }
@@ -60,7 +60,7 @@ public class Bestilling {
         printBestillinger();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
-        omsaetning.filPizzaCounter(number);
+        salgsstatistikOmsaetning.filPizzaCounter(number);
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
         }
