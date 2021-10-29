@@ -53,7 +53,7 @@ public class Bestilling {
             }
         }
         sorterAfhentingstidpunkt();
-        filhaandtering.writeB(bestillingsliste);
+        filhaandtering.writeToBestillingsliste(bestillingsliste);
     }
 
     public void fjernBestilling(Scanner input) throws FileNotFoundException {
@@ -65,7 +65,7 @@ public class Bestilling {
             bestillingsliste[number-1] = "null";
         }
         printBestillinger();
-        filhaandtering.writeB(bestillingsliste);
+        filhaandtering.writeToBestillingsliste(bestillingsliste);
     }
     public void printBestillinger() throws FileNotFoundException {
         sorterAfhentingstidpunkt();
@@ -96,7 +96,7 @@ public class Bestilling {
                     bestillingsliste[j] = tempBestilling;
                 }
             }
-            filhaandtering.writeB(bestillingsliste);
+            filhaandtering.writeToBestillingsliste(bestillingsliste);
         }
     }
 }
