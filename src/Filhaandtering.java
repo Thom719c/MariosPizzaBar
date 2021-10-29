@@ -69,7 +69,6 @@ public class Filhaandtering {
             String[] splitF = lastOne.split( Pattern.quote( " " ) );
             String firstOne = splitF[splitF.length-2];
             priser[i] = Integer.parseInt(firstOne);
-            //System.out.println(priser[i]);
         }
     }
 }

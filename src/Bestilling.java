@@ -52,7 +52,6 @@ public class Bestilling {
                 break;
             }
         }
-        //omsaetning.pizzaPris(bestillingsliste);
         sorterAfhentingstidpunkt();
         filhaandtering.writeB(bestillingsliste);
     }
@@ -61,7 +60,6 @@ public class Bestilling {
         printBestillinger();
         System.out.println("\nHvilken bestilling vil du slette?:");
         int number = input.nextInt();
-        //Omsaetning.filPizzaCounter(number); //omsætning metode kald
         omsaetning.filPizzaCounter(number);
         if(number >= 1 && number <= bestillingsliste.length){
             bestillingsliste[number-1] = "null";
@@ -99,7 +97,6 @@ public class Bestilling {
                     bestillingsliste[j] = tempBestilling;
                 }
             }
-            //System.out.println(bestillingsliste[i]);
             filhaandtering.writeB(bestillingsliste);
         }
     }
