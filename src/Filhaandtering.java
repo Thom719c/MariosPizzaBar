@@ -15,7 +15,7 @@ public class Filhaandtering {
     }
 
     public void readSalgsstatistik() throws FileNotFoundException{
-        Scanner readFileScanner = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        Scanner readFileScanner = new Scanner(new File("Ressources/Statistik/Salgsstatistik.txt"));
         int tempI = 1;
         while(readFileScanner.hasNext()) {
             System.out.printf("%s\n", readFileScanner.nextLine());
@@ -33,25 +33,25 @@ public class Filhaandtering {
         out.println(bestilling);
     }
 
-    public void writeToSalgsstatistik(int[] omsaetning) throws FileNotFoundException {
-        PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+    public void writeToSalgsstatistik(int[] salgsstatistikOmsaetning) throws FileNotFoundException {
+        PrintStream out = new PrintStream(new File("Ressources/Statistik/Salgsstatistik.txt"));
         String pizzaOmsaetning = "";
 
         for(int i = 0; i < 14; ++i) {
-            pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + omsaetning[i] + "\n";
+            pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + salgsstatistikOmsaetning[i] + "\n";
         }
         out.println(pizzaOmsaetning);
     }
 
-    public void opdaterOmsaetning(int[] countOmsaetning) throws FileNotFoundException {
+    public void opdaterCountsalgsstatistik(int[] countsalgsstatistik) throws FileNotFoundException {
         int i = 0;
-        Scanner readOmsaetning = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        Scanner readOmsaetning = new Scanner(new File("Ressources/Statistik/Salgsstatistik.txt"));
         while (readOmsaetning.hasNext()){
             String tempS = readOmsaetning.next();
             int tempInt = readOmsaetning.nextInt();
             tempS = readOmsaetning.next();
             tempS = readOmsaetning.next();
-            countOmsaetning[i] = readOmsaetning.nextInt();
+            countsalgsstatistik[i] = readOmsaetning.nextInt();
             i++;
         }
     }
