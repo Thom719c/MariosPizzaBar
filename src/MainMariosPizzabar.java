@@ -26,7 +26,7 @@ public class MainMariosPizzabar {
                     bestilling.bestilling();
                     break;
                 case 3:
-                    omsaetning.omsaetning();
+                    omsaetning.salgsstatistikOmsaetning();
                     break;
                 case 4:
                     System.exit(0);

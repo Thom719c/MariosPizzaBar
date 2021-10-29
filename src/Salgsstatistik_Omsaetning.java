@@ -7,7 +7,7 @@ public class Salgsstatistik_Omsaetning {
     private int[] count = new int[14];
     private int[] prisCount = new int[14];
 
-    public void omsaetning() throws FileNotFoundException {
+    public void salgsstatistikOmsaetning() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         int menuOmsaetningChoice = 0;
         while (menuOmsaetningChoice != 4){
