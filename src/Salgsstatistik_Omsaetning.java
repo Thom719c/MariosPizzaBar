@@ -1,11 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.*;
 
 public class Salgsstatistik_Omsaetning {
     private Filhaandtering filhaandtering = new Filhaandtering();
     private int[] count = new int[14];
     private int[] prisCount = new int[14];
+    private int omsaetningTotalPris = 0;
 
     public void salgsstatistikOmsaetning() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
@@ -20,10 +22,11 @@ public class Salgsstatistik_Omsaetning {
                     filhaandtering.readSalgsstatistik();
                     break;
                 case 2:
-                    visOmsaetning();
+                    VisOmsaetning();
                     break;
                 case 3:
-                    rydSalgsstatistikOmsaetning();
+                    RydSalgsstatistikOmsaetning();
+                    printTilPizzaOmsaetning();
                     break;
                 default:
                     System.out.println();
@@ -32,7 +35,6 @@ public class Salgsstatistik_Omsaetning {
     }
 
     public void filPizzaCounter(int line)throws FileNotFoundException {
-
         filhaandtering.opdaterCountsalgsstatistik(count);
 
         Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
@@ -55,6 +57,7 @@ public class Salgsstatistik_Omsaetning {
             }
         }
         filhaandtering.writeToSalgsstatistik(count);
+        beregnOmsaetning();
     }
 
     public void pizzaPris(String bestillingsliste, String tid)throws FileNotFoundException {
@@ -70,9 +73,9 @@ public class Salgsstatistik_Omsaetning {
                 }
             }
         }
-        prisForBestilling(prisCount, tid);
+        prisForBestilling(tid);
     }
-    public void prisForBestilling(int[] count, String tid) throws FileNotFoundException {
+    public void prisForBestilling(String tid) throws FileNotFoundException {
         filhaandtering.pizzaPris();
         int[] pris = new int[10];
         int tempPris = 0;
@@ -91,26 +94,31 @@ public class Salgsstatistik_Omsaetning {
             }
         }
     }
-    public void visOmsaetning(){
+
+    public void VisOmsaetning() throws FileNotFoundException {
+        beregnOmsaetning();
+        System.out.printf("Omsætnings total: %d kr.\n\n", omsaetningTotalPris);
+    }
+
+    public void beregnOmsaetning() throws FileNotFoundException {
+        filhaandtering.opdaterCountsalgsstatistik(count);
         filhaandtering.pizzaPris();
-        int[] pris = new int[10];
-        int tempPris = 0;
         for (int i = 0; i < 14; i++) {
             if (count[i] >= 1){
-                System.out.printf("Pizzanummer: %d antal bestillinger %d \n", (i+1), prisCount[i]);
-                tempPris += prisCount[i] * filhaandtering.priser[i];
+                omsaetningTotalPris += count[i] * filhaandtering.priser[i];
             }
         }
-        for (int i = 0; i < 14; i++){
-            if (pris[i] == 0) {
-                pris[i] = tempPris;
-                System.out.printf("Pris for bestillingen: %d kr \nAfhentningstidspunkt: %4s\n\n", pris[i], tid);
-                prisCount[i] = 0;
-                break;
-            }
-        }
+        printTilPizzaOmsaetning();
     }
-    public void rydSalgsstatistikOmsaetning(){
 
+    public void RydSalgsstatistikOmsaetning() throws FileNotFoundException {
+        Arrays.fill(count, 0);
+        filhaandtering.writeToSalgsstatistik(count);
+        omsaetningTotalPris = 0;
+    }
+
+    public void printTilPizzaOmsaetning() throws FileNotFoundException {
+        PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        out.println("Totalpris: " + omsaetningTotalPris);
     }
 }
