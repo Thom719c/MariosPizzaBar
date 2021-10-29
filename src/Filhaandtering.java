@@ -3,11 +3,22 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class Filhaandtering {
+    int[] priser = new int[14];
+
     public void readFil() throws FileNotFoundException{
         Scanner readFileScanner = new Scanner(new File("Ressources/pizzaMenu"));
         int tempI = 1;
         while(readFileScanner.hasNext()) {
             System.out.printf("%3d. %s\n", tempI,readFileScanner.nextLine());
+            tempI++;
+        }
+    }
+
+    public void readOmsaetning() throws FileNotFoundException{
+        Scanner readFileScanner = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        int tempI = 1;
+        while(readFileScanner.hasNext()) {
+            System.out.printf("%s\n", readFileScanner.nextLine());
             tempI++;
         }
     }
@@ -22,6 +33,16 @@ public class Filhaandtering {
         out.println(bestilling);
     }
 
+    public void writeToOmsaetning(int[] omsaetning) throws FileNotFoundException {
+        PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        String pizzaOmsaetning = "";
+
+        for(int i = 0; i < omsaetning.length; ++i) {
+            pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + omsaetning[i] + "\n";
+        }
+        out.println(pizzaOmsaetning);
+    }
+
     public void opdaterArray(String[] bestillingsliste) throws FileNotFoundException {
         int i = 0;
         Scanner readBestillingsliste = new Scanner(new File("Ressources/Bestillingsliste"));
@@ -33,7 +54,6 @@ public class Filhaandtering {
 
     public void pizzaPris() throws FileNotFoundException {
         String[] menuA = new String[14];
-        int[] priser = new int[14];
 
         Scanner readFileScanner = new Scanner(new File("Ressources/pizzaMenu"));
 
@@ -49,7 +69,7 @@ public class Filhaandtering {
             String[] splitF = lastOne.split( Pattern.quote( " " ) );
             String firstOne = splitF[splitF.length-2];
             priser[i] = Integer.parseInt(firstOne);
-            System.out.println(priser[i]);
+            //System.out.println(priser[i]);
         }
     }
 }
