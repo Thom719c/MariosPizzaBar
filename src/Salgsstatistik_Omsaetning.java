@@ -20,10 +20,10 @@ public class Salgsstatistik_Omsaetning {
                     filhaandtering.readSalgsstatistik();
                     break;
                 case 2:
-
+                    VisOmsaetning();
                     break;
                 case 3:
-
+                    RydSalgsstatistikOmsaetning();
                     break;
                 default:
                     System.out.println();
@@ -90,5 +90,13 @@ public class Salgsstatistik_Omsaetning {
                 break;
             }
         }
+    }
+
+    public void VisOmsaetning(){
+
+    }
+
+    public void RydSalgsstatistikOmsaetning(){
+
     }
 }
