@@ -20,10 +20,10 @@ public class Salgsstatistik_Omsaetning {
                     filhaandtering.readSalgsstatistik();
                     break;
                 case 2:
-
+                    visOmsaetning();
                     break;
                 case 3:
-
+                    rydSalgsstatistikOmsaetning();
                     break;
                 default:
                     System.out.println();
@@ -70,9 +70,9 @@ public class Salgsstatistik_Omsaetning {
                 }
             }
         }
-        prisForBestilling(tid);
+        prisForBestilling(prisCount, tid);
     }
-    public void prisForBestilling(String tid) throws FileNotFoundException {
+    public void prisForBestilling(int[] count, String tid) throws FileNotFoundException {
         filhaandtering.pizzaPris();
         int[] pris = new int[10];
         int tempPris = 0;
@@ -90,5 +90,27 @@ public class Salgsstatistik_Omsaetning {
                 break;
             }
         }
+    }
+    public void visOmsaetning(){
+        filhaandtering.pizzaPris();
+        int[] pris = new int[10];
+        int tempPris = 0;
+        for (int i = 0; i < 14; i++) {
+            if (count[i] >= 1){
+                System.out.printf("Pizzanummer: %d antal bestillinger %d \n", (i+1), prisCount[i]);
+                tempPris += prisCount[i] * filhaandtering.priser[i];
+            }
+        }
+        for (int i = 0; i < 14; i++){
+            if (pris[i] == 0) {
+                pris[i] = tempPris;
+                System.out.printf("Pris for bestillingen: %d kr \nAfhentningstidspunkt: %4s\n\n", pris[i], tid);
+                prisCount[i] = 0;
+                break;
+            }
+        }
+    }
+    public void rydSalgsstatistikOmsaetning(){
+
     }
 }
