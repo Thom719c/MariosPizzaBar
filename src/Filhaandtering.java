@@ -15,7 +15,7 @@ public class Filhaandtering {
     }
 
     public void readSalgsstatistik() throws FileNotFoundException{
-        Scanner readFileScanner = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        Scanner readFileScanner = new Scanner(new File("Ressources/Statistik/Salgsstatistik.txt"));
         int tempI = 1;
         while(readFileScanner.hasNext()) {
             System.out.printf("%s\n", readFileScanner.nextLine());
@@ -34,7 +34,7 @@ public class Filhaandtering {
     }
 
     public void writeToSalgsstatistik(int[] salgsstatistikOmsaetning) throws FileNotFoundException {
-        PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        PrintStream out = new PrintStream(new File("Ressources/Statistik/Salgsstatistik.txt"));
         String pizzaOmsaetning = "";
 
         for(int i = 0; i < 14; ++i) {
@@ -45,7 +45,7 @@ public class Filhaandtering {
 
     public void opdaterCountsalgsstatistik(int[] countsalgsstatistik) throws FileNotFoundException {
         int i = 0;
-        Scanner readOmsaetning = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        Scanner readOmsaetning = new Scanner(new File("Ressources/Statistik/Salgsstatistik.txt"));
         while (readOmsaetning.hasNext()){
             String tempS = readOmsaetning.next();
             int tempInt = readOmsaetning.nextInt();
