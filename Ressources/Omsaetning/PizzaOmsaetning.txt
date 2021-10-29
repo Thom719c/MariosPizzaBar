@@ -1,4 +1,4 @@
-Pizzanummer: 1 antal pizzaer 3
+Pizzanummer: 1 antal pizzaer 0
 Pizzanummer: 2 antal pizzaer 0
 Pizzanummer: 3 antal pizzaer 0
 Pizzanummer: 4 antal pizzaer 0

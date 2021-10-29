@@ -8,34 +8,13 @@ public class Omsaetning {
     private int[] prisCount = new int[14];
 
     public void filPizzaCounter(int line)throws FileNotFoundException {
-        /*
-        int count1 = 0;
 
-        Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
-
-        for(int i = 0; i < line - 1; i++){
-            input.nextLine();
-        }
-        String text = input.nextLine();
-        System.out.println(text);
-
-        for(int i = 0; i <= text.length() - 1; i++){
-            if(text.charAt(i) == '.'){
-                break;
-            }else if(text.charAt(i) == '1'){
-                count1++;
-            }
-        }
-        //System.out.println("Bestillingen har:  " + count1);
-
-         */
         Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
 
         for(int i = 0; i < line - 1 ; i++){
             input.nextLine();
         }
         String text = input.nextLine();
-        System.out.println(text);
 
         String antalBestil = text.substring(0, text.indexOf("."));      //Tag alt det fra linen i filen som er før punktum
         antalBestil = antalBestil.replaceAll(" ","");   //Udskifter alle de mellemrum der er med ingen mellemrum
@@ -90,6 +69,5 @@ public class Omsaetning {
                 break;
             }
         }
-        //Arrays.fill(prisCount, 0);
     }
 }
