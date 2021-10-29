@@ -18,10 +18,8 @@ public class Filhaandtering {
     //Læser filen Salgsstatistik og printer den til konsolen
     public void readSalgsstatistik() throws FileNotFoundException{
         Scanner readFileScanner = new Scanner(new File("Ressources/Statistik/Salgsstatistik.txt"));
-        int tempI = 1;
         while(readFileScanner.hasNext()) {
             System.out.printf("%s\n", readFileScanner.nextLine());
-            tempI++;
         }
     }
 
