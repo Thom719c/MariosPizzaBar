@@ -10,7 +10,7 @@ public class MainMariosPizzabar {
     public static void runMariosPizzaProgram() throws FileNotFoundException {
         Filhaandtering filhaandtering = new Filhaandtering();
         Bestilling bestilling = new Bestilling();
-        Omsaetning omsaetning = new Omsaetning();
+        Salgsstatistik_Omsaetning omsaetning = new Salgsstatistik_Omsaetning();
         Scanner input = new Scanner(System.in);
         while (true){
             System.out.println("Menu - 1-4" +
