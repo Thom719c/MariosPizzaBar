@@ -1,12 +1,12 @@
-Pizzanummer: 1 antal pizzaer 5
-Pizzanummer: 2 antal pizzaer 3
+Pizzanummer: 1 antal pizzaer 9
+Pizzanummer: 2 antal pizzaer 4
 Pizzanummer: 3 antal pizzaer 0
 Pizzanummer: 4 antal pizzaer 0
 Pizzanummer: 5 antal pizzaer 0
 Pizzanummer: 6 antal pizzaer 0
 Pizzanummer: 7 antal pizzaer 1
-Pizzanummer: 8 antal pizzaer 0
-Pizzanummer: 9 antal pizzaer 1
+Pizzanummer: 8 antal pizzaer 3
+Pizzanummer: 9 antal pizzaer 2
 Pizzanummer: 10 antal pizzaer 0
 Pizzanummer: 11 antal pizzaer 0
 Pizzanummer: 12 antal pizzaer 0
