@@ -64,7 +64,6 @@ public class Bestilling {
             bestillingsliste[number-1] = "null";
         }
         printBestillinger();
-        filhaandtering.writeToBestillingsliste(bestillingsliste);
     }
     public void printBestillinger() throws FileNotFoundException {
         sorterAfhentingstidpunkt();
