@@ -15,7 +15,6 @@ public class Omsaetning {
             input.nextLine();
         }
         String text = input.nextLine();
-        System.out.println(text);
 
         String antalBestil = text.substring(0, text.indexOf("."));      //Tag alt det fra linen i filen som er før punktum
         antalBestil = antalBestil.replaceAll(" ","");   //Udskifter alle de mellemrum der er med ingen mellemrum
@@ -70,6 +69,5 @@ public class Omsaetning {
                 break;
             }
         }
-        //Arrays.fill(prisCount, 0);
     }
 }
