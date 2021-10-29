@@ -33,17 +33,17 @@ public class Filhaandtering {
         out.println(bestilling);
     }
 
-    public void writeToSalgsstatistik(int[] omsaetning) throws FileNotFoundException {
+    public void writeToSalgsstatistik(int[] salgsstatistikOmsaetning) throws FileNotFoundException {
         PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
         String pizzaOmsaetning = "";
 
         for(int i = 0; i < 14; ++i) {
-            pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + omsaetning[i] + "\n";
+            pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + salgsstatistikOmsaetning[i] + "\n";
         }
         out.println(pizzaOmsaetning);
     }
 
-    public void opdaterOmsaetning(int[] countOmsaetning) throws FileNotFoundException {
+    public void opdaterCountsalgsstatistik(int[] countsalgsstatistik) throws FileNotFoundException {
         int i = 0;
         Scanner readOmsaetning = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
         while (readOmsaetning.hasNext()){
@@ -51,7 +51,7 @@ public class Filhaandtering {
             int tempInt = readOmsaetning.nextInt();
             tempS = readOmsaetning.next();
             tempS = readOmsaetning.next();
-            countOmsaetning[i] = readOmsaetning.nextInt();
+            countsalgsstatistik[i] = readOmsaetning.nextInt();
             i++;
         }
     }
