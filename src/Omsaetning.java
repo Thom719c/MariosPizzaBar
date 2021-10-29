@@ -32,11 +32,12 @@ public class Omsaetning {
     }
 
     public void filPizzaCounter(int line)throws FileNotFoundException {
+
         filhaandtering.opdaterOmsaetning(count);
 
         Scanner input = new Scanner(new File("Ressources/Bestillingsliste"));
 
-        for(int i = 0; i < line - 1 ; i++){
+        for(int i = 0; i < line - 1; i++){
             input.nextLine();
         }
         String text = input.nextLine();
