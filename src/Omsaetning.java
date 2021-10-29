@@ -8,6 +8,7 @@ public class Omsaetning {
     private int[] prisCount = new int[14];
 
     public void filPizzaCounter(int line)throws FileNotFoundException {
+        filhaandtering.opdaterOmsaetning(count);
 
         filhaandtering.opdaterOmsaetning(count);
 
