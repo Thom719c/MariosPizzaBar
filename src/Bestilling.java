@@ -73,9 +73,6 @@ public class Bestilling {
         }
         System.out.println();
     }
-    public void visBestillinger(){
-        System.out.printf("Pizzanummer: %d, afhentningstidspunkt: &s");
-    }
 
     public void sorterAfhentingstidpunkt() throws FileNotFoundException {
         String[] afhentningstidspunkt = new String[10];
