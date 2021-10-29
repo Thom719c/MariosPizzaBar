@@ -43,6 +43,19 @@ public class Filhaandtering {
         out.println(pizzaOmsaetning);
     }
 
+    public void opdaterOmsaetning(int[] countOmsaetning) throws FileNotFoundException {
+        int i = 0;
+        Scanner readOmsaetning = new Scanner(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
+        while (readOmsaetning.hasNext()){
+            String tempS = readOmsaetning.next();
+            int tempInt = readOmsaetning.nextInt();
+            String tempS1 = readOmsaetning.next();
+            String tempS2 = readOmsaetning.next();
+            countOmsaetning[i] = readOmsaetning.nextInt();
+            i++;
+        }
+    }
+
     public void opdaterArray(String[] bestillingsliste) throws FileNotFoundException {
         int i = 0;
         Scanner readBestillingsliste = new Scanner(new File("Ressources/Bestillingsliste"));
