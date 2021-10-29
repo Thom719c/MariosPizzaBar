@@ -26,7 +26,7 @@ public class Filhaandtering {
     }
 
     //tager array bestillingsliste og skriver til filen Bestillingsliste
-    public void writeB(String[] bestillingsliste) throws FileNotFoundException{
+    public void writeToBestillingsliste(String[] bestillingsliste) throws FileNotFoundException{
         PrintStream out = new PrintStream(new File("Ressources/Bestillingsliste"));
         String bestilling = "";
 
