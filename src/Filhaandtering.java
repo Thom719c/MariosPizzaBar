@@ -37,7 +37,7 @@ public class Filhaandtering {
         PrintStream out = new PrintStream(new File("Ressources/Omsaetning/PizzaOmsaetning.txt"));
         String pizzaOmsaetning = "";
 
-        for(int i = 0; i < omsaetning.length; ++i) {
+        for(int i = 0; i < 14; ++i) {
             pizzaOmsaetning += "Pizzanummer: " + (i+1) + " antal pizzaer " + omsaetning[i] + "\n";
         }
         out.println(pizzaOmsaetning);
